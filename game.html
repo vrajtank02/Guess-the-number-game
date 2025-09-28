@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome | Guess The Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <h2 id="greeting"></h2>
+        <p id="leftGuesses"></p>
+
+        <label for="userInput">Enter a number between 0 and 100:</label>
+        <br>
+        <input type="number" id="userInput">
+        <button id="guessBtn" disabled>Guess</button>
+
+        <p id="message" aria-live="polite"></p>
+
+        <div id="end-game-buttons">
+            <button id="playAgainBtn">Play Again</button>
+            <button id="exitBtn">Exit</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
