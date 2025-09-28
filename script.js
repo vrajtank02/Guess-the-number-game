@@ -21,7 +21,8 @@ function startGame() {
 
     secretNumber = Math.floor(Math.random() * 101);
     remainingGuesses = MAX_GUESSES;
-
+    userInput.disabled = false;
+    guessBtn.disabled = false;
     leftGuesses.textContent = `${remainingGuesses}/${MAX_GUESSES} guesses remaining`;
     messageEl.textContent = '';
     userInput.value = '';
