@@ -5,7 +5,6 @@ const guessBtn = document.getElementById('guessBtn');
 const messageEl = document.getElementById('message');
 const endGameButtons = document.getElementById('end-game-buttons');
 const playAgainBtn = document.getElementById('playAgainBtn');
-const exitBtn = document.getElementById('exitBtn');
 
 const MAX_GUESSES = 10;
 let secretNumber;
@@ -26,8 +25,7 @@ function startGame() {
     leftGuesses.textContent = `${remainingGuesses}/${MAX_GUESSES} guesses remaining`;
     messageEl.textContent = '';
     userInput.value = '';
-    userInput.disabled = false;
-    guessBtn.disabled = true;
+    
     endGameButtons.style.display = 'none';
     userInput.focus();
 }
@@ -46,10 +44,14 @@ function setGreeting() {
 }
 
 function checkGuess() {
+    if(userInput.value === ''){
+        messageEl.innerHTML = "<span style = color:red>Please enter a number between 0 and 100.</span>";
+        userInput.focus();
+        return;
+    }
     const userGuess = parseInt(userInput.value);
-
-    if (userGuess < 0 || userGuess > 100) {
-        messageEl.textContent = "Please enter a number between 0 and 100.";
+        if (userGuess < 0 || userGuess > 100) {
+        messageEl.innerHTML = "<span style = color:red>Please enter a number between 0 and 100.</span>";
         userInput.value = '';
         return;
     }
@@ -78,7 +80,6 @@ function checkGuess() {
     messageEl.textContent = messageText;
     userInput.value = '';
     userInput.focus();
-    guessBtn.disabled = true;
 }
 
 function endGame() {
@@ -91,18 +92,6 @@ window.onload = startGame;
 
 guessBtn.addEventListener('click', checkGuess);
 playAgainBtn.addEventListener('click', startGame);
-exitBtn.addEventListener('click', function () {
-    window.close();
-});
-
-userInput.addEventListener('input', function () {
-    const num = parseInt(userInput.value);
-    if (userInput.value === '' || num < 0 || num > 100) {
-        guessBtn.disabled = true;
-    } else {
-        guessBtn.disabled = false;
-    }
-});
 
 userInput.addEventListener('keydown', function (event) {
     if (event.key === 'Enter' && !guessBtn.disabled) {
