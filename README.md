@@ -129,6 +129,7 @@ To run this game locally:
 
 1. **Clone the repository:**
    ```bash
+   # Replace YOUR_USERNAME with your actual GitHub username
    git clone https://github.com/YOUR_USERNAME/Guess-the-number-game.git
    cd Guess-the-number-game
    ```
