@@ -38,7 +38,7 @@ GitHub Pages is perfect for static websites and offers free hosting directly fro
 # 3. Select the branch (usually 'main' or 'master')
 # 4. Choose root directory
 # 5. Click Save
-# Your game will be live at: https://yourusername.github.io/Guess-the-number-game/
+# Your game will be live at: https://YOUR_USERNAME.github.io/Guess-the-number-game/
 ```
 
 #### 2. **Netlify**
@@ -129,7 +129,7 @@ To run this game locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/Guess-the-number-game.git
+   git clone https://github.com/YOUR_USERNAME/Guess-the-number-game.git
    cd Guess-the-number-game
    ```
 
