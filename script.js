@@ -62,7 +62,7 @@ function checkGuess() {
     let messageText = '';
     if (userGuess === secretNumber) {
         let attempts = MAX_GUESSES - remainingGuesses;
-        messageText = `🎉 Congratulations, ${username}! You guessed it right in ${attempts} attempts.`;
+        messageText = `Congratulations, ${username}! You guessed it right in ${attempts} attempts.`;
         endGame();
     }
     else if (remainingGuesses === 0) {
